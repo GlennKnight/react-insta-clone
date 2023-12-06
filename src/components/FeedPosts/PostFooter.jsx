@@ -21,7 +21,7 @@ const PostFooter = ({ username }) => {
             <Flex width={'full'} direction={'column'}>
                 <Flex alignItems={'center'} gap={4} width={'full'}>
                     <Box onClick={handleLike} cursor={'pointer'} fontSize={18}>
-                        {liked ? <MdFavorite /> : <MdFavoriteBorder />}
+                        {liked ? <MdFavorite color='red' /> : <MdFavoriteBorder />}
                     </Box>
 
                     <Box cursor={'pointer'} >
