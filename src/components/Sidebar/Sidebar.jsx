@@ -26,7 +26,7 @@ const Sidebar = () => {
         {
             icon: <Avatar size={'sm'} name='John Smith' src='/profile.jpg' />,
             text: 'Profile',
-            link: '/johnsmith'
+            link: '/glennantknight'
         }
     ];
     const { handleLogout, isLoggingOut } = useLogout();

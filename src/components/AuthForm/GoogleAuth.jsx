@@ -18,7 +18,7 @@ const GoogleAuth = ({ prefix }) => {
                 return;
             }
 
-            const usersRef = doc(firestore, 'users'.newUser.user.uid);
+            const usersRef = doc(firestore, 'users', newUser.user.uid);
             const userSnap = await getDoc(usersRef);
 
 
