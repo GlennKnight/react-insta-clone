@@ -23,7 +23,7 @@ const Sidebar = () => {
             text: 'Create'
         },
         {
-            icon: <Avatar size={'sm'} name='Glenn Knight' />,
+            icon: <Avatar size={'sm'} name='John Smith' src='/profile.jpg' />,
             text: 'Profile',
             link: '/'
         }
@@ -38,7 +38,7 @@ const Sidebar = () => {
                 <Flex direction={'column'} gap={3} alignItems={'center'} h={'full'}>
                     {sidebarItems.map((item, index) => <SidebarLink key={index} text={item.text} icon={item.icon} link={item.link} />)}
                     <Box flex={1}></Box>
-                    <SidebarLink text='Logout' icon={<MdLogout size={24} />} link='/auth' />
+                    <SidebarLink text='Log out' icon={<MdLogout size={24} />} link='/auth' />
                 </Flex>
             </Flex>
         </Box >
