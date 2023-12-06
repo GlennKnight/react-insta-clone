@@ -2,7 +2,7 @@ import { Flex, Box, Text, InputGroup, Input, InputRightElement, Button } from '@
 import { useState } from 'react';
 import { MdComment, MdFavorite, MdFavoriteBorder } from 'react-icons/md';
 
-const PostFooter = ({ username }) => {
+const PostFooter = ({ username, isProfilePage }) => {
     const [liked, setLiked] = useState(false);
     const [likes, setLikes] = useState(1000);
 
@@ -17,7 +17,7 @@ const PostFooter = ({ username }) => {
     };
 
     return (
-        <>
+        <Flex width={'full'} gap={2} direction={'column'} mt={'auto'}>
             <Flex width={'full'} direction={'column'}>
                 <Flex alignItems={'center'} gap={4} width={'full'}>
                     <Box onClick={handleLike} cursor={'pointer'} fontSize={18}>
@@ -33,14 +33,20 @@ const PostFooter = ({ username }) => {
                 <Text fontWeight={600} fontSize={'sm'}>
                     {likes} likes
                 </Text>
-                <Text fontWeight={700} fontSize={'sm'}>
-                    <Text as={'span'}>{username}</Text>
-                    &nbsp;
-                    <Text as={'span'} fontWeight={400}>Feeling good</Text>
-                </Text>
-                <Text color={'gray'} fontSize={'sm'}>
-                    View all 1,000 comments
-                </Text>
+                {
+                    isProfilePage ?
+                        null :
+                        <>
+                            <Text fontWeight={700} fontSize={'sm'}>
+                                <Text as={'span'}>{username}</Text>
+                                &nbsp;
+                                <Text as={'span'} fontWeight={400}>Feeling good</Text>
+                            </Text>
+                            <Text color={'gray'} fontSize={'sm'}>
+                                View all 1,000 comments
+                            </Text>
+                        </>
+                }
                 <InputGroup>
                     <Input variant={'flushed'} placeholder={'Add a comment'} fontSize={14} />
                     <InputRightElement>
@@ -48,7 +54,7 @@ const PostFooter = ({ username }) => {
                     </InputRightElement>
                 </InputGroup>
             </Flex>
-        </>
+        </Flex>
     );
 }
 
